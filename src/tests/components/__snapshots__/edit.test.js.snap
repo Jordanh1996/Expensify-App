@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render edit page correctly 1`] = `
+<div>
+  <h1>
+    Edit Expense
+  </h1>
+  <ExpeneForm
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    remove
+  </button>
+</div>
+`;
