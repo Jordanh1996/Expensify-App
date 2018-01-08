@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from '../components/header';
 import Editpage from '../components/edit';
 import Helppage from '../components/help';
-import Addexpense from '../components/addexpensepage';
+import Addexpense from '../components/addExpensePage';
 import Notfound from '../components/notfound';
-import Dashboard from '../components/expensedashboard'
+import Dashboard from '../components/expenseDashboard'
 
 
 
