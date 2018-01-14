@@ -1,28 +1,31 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { Router, Route, Switch} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import Header from '../components/header';
 import Editpage from '../components/edit';
-import Helppage from '../components/help';
 import Addexpense from '../components/addExpensePage';
 import Notfound from '../components/notfound';
-import Dashboard from '../components/expenseDashboard'
+import Dashboard from '../components/expenseDashboard';
+import LoginPage from '../components/loginPage';
+import PrivateRoute from './privateRoute';
+import PublicRoute from './publicRoute';
 
+
+export const history = createHistory();
 
 
 const Website = () => (
-    <BrowserRouter>
+    <Router history={history}>
         <div>
-            <Header />
             <Switch>
-                <Route path="/" component={Dashboard} exact={true} />
-                <Route path="/edit" component={Editpage} exact={true} />
-                <Route path="/edit/:id" component={Editpage} />
-                <Route path="/help" component={Helppage} />
-                <Route path="/expense" component={Addexpense} />
+                <PublicRoute path="/" component={LoginPage} exact={true} />
+                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute path="/edit/:id" component={Editpage} />
+                <PrivateRoute path="/expense" component={Addexpense} />
                 <Route component={Notfound} />
             </Switch>
         </div>
-    </BrowserRouter>
+    </Router>
 )
 
 export default Website;
