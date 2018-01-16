@@ -21,7 +21,7 @@ const Website = () => (
                 <PublicRoute path="/" component={LoginPage} exact={true} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
                 <PrivateRoute path="/edit/:id" component={Editpage} />
-                <PrivateRoute path="/expense" component={Addexpense} />
+                <PrivateRoute path="/create" component={Addexpense} />
                 <Route component={Notfound} />
             </Switch>
         </div>

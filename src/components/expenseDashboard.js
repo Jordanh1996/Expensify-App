@@ -4,13 +4,18 @@ import ExpenseList from './expenseList';
 import ExpenseListFilters from './expenseListFilters';
 import selectExpenses from '../selectors/expenses';
 import expensesTotal from '../selectors/expensesTotal';
+import {Link} from 'react-router-dom';
 
 const ExpenseDashboard = (props) => (
     <div>
-        {props.expenses.length > 0 ? 
-        <p>Viewing {props.expenses.length} expenses with a sum of ${props.total}</p> :
-        <p></p>
-        }
+        <div className="page-header">
+            <div className="content-container">
+                <h1 className="page-header__title">Viewing <span>{props.expenses.length}</span> expenses with a sum of <span>${props.total > 0 ? props.total : 0}</span></h1>
+                <div className='page-header__actions'>
+                    <Link className='button' to='/create'>Add Expense</Link>
+                </div>
+            </div>
+        </div>
         <ExpenseListFilters />
         <ExpenseList />
     </div>
