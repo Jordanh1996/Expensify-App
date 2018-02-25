@@ -18,3 +18,10 @@
 .button--secondary {
     background: #888888;
 }
+
+.button--modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 $xl-size 0 $xl-size
+}

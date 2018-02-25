@@ -1,7 +1,6 @@
 import React from 'react';
 import { Router, Route, Switch} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import Header from '../components/header';
 import Editpage from '../components/edit';
 import Addexpense from '../components/addExpensePage';
 import Notfound from '../components/notfound';

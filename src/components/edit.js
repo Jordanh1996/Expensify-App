@@ -2,8 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ExpenseForm from './expenseForm';
 import {startEditExpense, startRemoveExpense} from '../actions/expenses';
+import RemoveModal from './removeModal';
+import removeModal from './removeModal';
 
 export class Editpage extends React.Component {
+
+
+    state = {
+        removeModalOpen: false
+    }
 
     onSubmit = (expense) => {
         this.props.startEditExpense(this.props.match.params.id, expense)
@@ -11,8 +18,20 @@ export class Editpage extends React.Component {
     }
 
     removeExpense = () => {
+        this.setState(() => ({
+            removeModalOpen: true
+        }))
+    }
+
+    confirmRemoveExpense = () => {
         this.props.startRemoveExpense({id: this.props.expense.id})
         this.props.history.push('/')
+    }
+
+    cancelRemoveExpense = () => {
+        this.setState(() => ({
+            removeModalOpen: false
+        }))
     }
 
     render() {
@@ -32,6 +51,11 @@ export class Editpage extends React.Component {
                     >
                             Remove Expense
                     </button>
+                    <RemoveModal
+                        isopen={this.state.removeModalOpen}
+                        isclose={this.cancelRemoveExpense}
+                        confirmRemove={this.confirmRemoveExpense}
+                    />
                 </div>
             </div>
         )
