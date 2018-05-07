@@ -1,5 +1,8 @@
 <h1>Expensify</h1>
 
+<h1>**NOTE**</h1>
+<h2>THIS VERSION IS LEGACY, THE CODE FOR THE CURRENT WEBSITE IS FOUND ON: https://github.com/Jordanh1996/Expensify</h2>
+
 <p>Link to web page: https://expensify-jordan.herokuapp.com</p>
 
 <h2>Description</h2>
